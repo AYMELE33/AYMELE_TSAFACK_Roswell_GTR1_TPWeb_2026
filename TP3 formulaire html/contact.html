@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Contact-mon mini-site</title>
+    </head>
+    <body>
+        <h1>Page de contact</h1>
+        <nav>
+            <a href="index.html">accueil</a>
+            <a href="presentation.html">presentation</a>
+            <a href="contact.html">contact</a>
+        </nav>
+        <h2>formulaire de contact</h2>
+        <p>Veuillez remplir ce formulaire pour envoyer un Message</p>
+        <form>
+            <label for="nom">Nom:</label>
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+            <br>
+            <br>
+            <label for="prenom">prenom:</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prenom" required>
+            <br>
+            <br>
+            <label for="email">Adresse:</label>
+            <input type="email" id="email" name="email" placeholder="exempple@email.com" required>
+            <br>
+            <br>
+            <label for="motif">motif du Message</label>
+            <select id="motif" name="motif" required>
+                <option value="">--choisir un motif</option>
+                <option value="information">Demande l'information</option>
+                <option value="stage">Demande de stage</option>
+                <option value="projet">proposition de projet</option>
+                <option value="autre">autre Demande</option>
+            </select>
+            <br>
+            <br>
+            <P>statut du visiteur</P> 
+            <input type="radio" id="etudiant" name="statut" value="etudiant" required>
+            <label for="etudiant">Etudiant</label>
+            <br>
+            <input type="radio" id="enseignant" name="statut" value="enseignanat">
+            <label for="enseignanat">enseignanat</label>
+            <br>
+            <input type="radio" id="professionnel" name="statut" value="professionnel">
+            <label for="professionnel">professionnel</label>
+            <br>
+            <br>
+             <label for="Message">Message:</label> 
+            <textarea id="Message" name="Message" rows="5" cols="40" placeholder="Ecrivez votre Message ici" required></textarea>
+            <br>
+            <br>
+            <button type="submit">envoyer</button>
+            <button type="reset">Effacer</button>
+        </form>
+    </body>
+</html>
