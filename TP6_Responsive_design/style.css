@@ -146,3 +146,97 @@ img{
     height: auto;
     display: block;
 }
+@media(max-width:900px){
+    .page{
+        width: 95%;
+    }
+    aside {
+        padding: 15px;
+    }
+}
+@media(max-width:768px){
+    .container{
+        flex-direction: column;
+    }
+    nav  {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    header{
+        padding: 15px;
+    }
+    h1 {
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    p {
+        font-size: 15px;
+    }
+}
+@media(max-width:480px) {
+    .page {
+        width: 100%;
+    }
+   body{
+    background-color: white;
+   }
+   header{
+    border-radius: 0;
+    padding: 12px;
+   }
+   main {
+    border-radius: 0;
+    padding: 12px;
+   }
+   aside{ 
+    border-radius: 0;
+    padding: 12px;
+   }
+   nav a {
+    font-size: 14px;
+   }
+   footer {
+    font-size: 12px;
+   } 
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+textarea{
+    width: 100px;
+padding: 10px;
+margin-bottom: 12px;
+border: 1px solid #CCC;
+border-radius: 5px;
+}
+select{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0b3d91;
+    color: white;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #062b66;
+}
+input[type="radio"]{
+    width: auto;
+}
+input[type="checkbox"]{
+    width: auto;
+}
