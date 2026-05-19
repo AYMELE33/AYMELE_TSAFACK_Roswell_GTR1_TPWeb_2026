@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>accueil-mon-mini-site</title>
+         <link rel="stylesheet" href="style.CSS">
+    </head>
+    <body>
+        <header>
+            <h1>Mon mini-site</h1>
+        </header>
+        <nav>
+            <a href="index.html">accueil</a>
+            <a href="presentation.html">presentation</a> 
+            <a href="contact.html">contact</a>
+        </nav>
+        <div class="container">
+            <main>
+                 <h2>Bienvenue</h2>
+                <p>Ce site a été amélioré avec Flexbox pour une meilleure organisation</p>
+                <section class="carte">
+                    <h2>Compteur interactif</h2>
+                    <h2>Ajout dynamique dans une liste </h2>
+                    <p>Cette zone permet d'ajouter un équipement réseau dans une liste.</p>
+                    <label for="equipement">Nom de l'équipement:</label>
+                    <input type="text" id="equipement" placeholder="Expleme : Routeur R1">
+                    <button onclick="ajouterEquipement()">Ajouter</button>
+                    <button onclick="viderListe()">vider la liste</button>
+                    <ul id="listeEquipements"></ul>
+                    <p id="messageListe"></p>
+                    <p>Ce Compteur montre comment JavaScript peut conserver et modifié une valeur.</p>
+                    <p id="compteur">0</p>
+                    <button onclick="incrementer()">Augmenter</button>
+                    <button onclick="decrementer()">Diminuer</button>
+                    <button onclick="remettreCompteurAzero()">Remettre à zéro</button>
+                    <h2>message dynamique avec JavaScript</h2>
+                    <p>cette zone permet d'afficher un message personnalisé à partir d'un nom saisi</p>
+                    <label for="nomUtilisateur">Entrez votre nom</label>
+                    <input type="text" id="nomUtilisateur" placeholder="Expleme:Roswell">
+                    <label for="domaineUtilisateur">Choisissez votre domaine d'intérêt</label>
+                    <select id="domaineUtilisateur">
+                        <option value="">-- Choisir un domaine--</option>
+                        <option value="réseaux informatiques">Réseaux informatiques</option>
+                        <option value="cybersécurité">Cybersécurité</option>
+                        <option value="développement web">Développement web</option>
+                        <option value="administration système">Administration système</option>
+                    </select>
+                    <button onclick="afficherMessage()">Afficher le message</button>
+                    <button onclick="effacerMessage()">Effacer</button>
+                    <p id="messageResultat"></p>
+                </section>
+                <section class="carte">
+                    <h2>Laboratoire de manipulation du DOM</h2>
+                    <p id="texteDynamique">Ce texte initial sera modifié avec JavaScript.</p>
+                    <button onclick="changerTexte()">Changer le texte</button>
+                    <button onclick="changeCouleur()">Changer la couleur</button>
+                    <button onclick="changerStyle()">Changer le style complet</button>
+                    <button onclick="masquerTexte()">Masquer</button>
+                    <button onclick="afficherTexte()">Afficher</button>
+                    <button onclick="reinitialiserTexte()">Réinitialiser</button>
+                </section>
+                <section class="carte">
+                    <h2>Modification dynamique d'une image</h2>
+                    <p>Cette zone montre comment JavaScript peut modifier l'attribut src d'une image</p>
+                    <img id="imageDynamique" src="images/Profil.jpg.jpg" alt="Image initiale" width="250">
+                    <button onclick="afficherImageProfil()">Afficher image Profil</button>
+                    <button onclick="afficherImageReseau()">Afficher image réseau</button>
+                </section>
+            </main>
+            <aside>
+                <h2>Informations</h2>
+                <p>Cette zone peut contenir les Informations supplémentaires</p>
+            </aside>
+        </div>
+        <footer>
+            <p>$ 2026 - Mon mini-site</p>
+        </footer>
+        <script>
+            function afficherMessage(){
+                document.getElementById("nomUtilisateur").value="";
+                document.getElementById("domaineUtilisateur").value="";
+                document.getElementById("messageResultat").textContent="";
+                let nom=document.getElementById("nomUtilisateur").value;
+                let domaine=document.getElementById("domaineUtilisateur").value;
+                let message="";
+                if(nom===""&&domaine===""){
+                    message="veuillez saisir votre nom et choisir un domaine d'intérêt.";
+                }else if(nom===""){
+                    message="veuillez saisir votre nom.";
+                }else if(domaine===""){
+                    message="veuillez choisir un domaine d'intérêt.";
+                }else{
+                    message="Bienvenue" + nom +".votre domaine d'intérêt.";
+                }
+                    message="Bienvenue" + nom +"dans le cours de programmation web.";
+                
+                document.getElementById("messageResultat").textContent=message;
+            }
+        </script>
+        <script>
+            function changerTexte() {
+                document.getElementById("texteDynamique").textContent="Le texte a été modifié grâce au DOM.";
+            }
+            function changerTexte() {
+                document.getElementById("texteDynamique").textContent="Le texte a été modifié grâce au DOM.";
+            }
+            function changeCouleur() {
+                document.getElementById("texteDynamique").style.color = "red";
+            }
+            function changerStyle() {
+                let element = document.getElementById("texteDynamique");
+                element.style.color = "white";
+                element.style.backgroundColor = "#0b3d91";
+                element.style.fontSize = "20px";
+                element.style.fontWeight = "bold";
+                element.style.padding = "12px";
+                element.style.borderRadius = "8px";
+            }
+            function masquerTexte() {
+                document.getElementById("texteDynamique").style.display = "none";
+            }
+            function afficherTexte() {
+                document.getElementById("texteDynamique").style.display = "block";
+            }
+            function reinitialiserTexte() {
+                let element = document.getElementById("texteDynamique");
+                element.textContent = "Ce texte initial sera modifié avec JavaScript.";
+                element.style.color = "#222";
+                element.style.backgroundColor = "transparent";
+                element.style.fontSize = "16px";
+                element.style.fontWeight = "normal";
+                element.style.padding = "0";
+                element.style.borderRadius = "0";
+                element.style.display = "block";
+            }
+            function incrementer() {
+                valueCompteur = valueCompteur + 1;
+                document.getElementById("compteur").textContent = valueCompteur;
+            }
+            function decrementer() {
+                valueCompteur = valueCompteur -1;
+                document.getElementById("competeur").textContent = valueCompteur;
+            }
+            function remettreCompteurAzero() {
+                valueCompteur = 0;
+                document.getElementById("compteur").textContent = valueCompteur;
+            }
+            function ajouterEquipement() {
+                let champ = document.getElementById("equipement");
+                let nomEquipement = champ.value;
+                let message = document.getElementById("messageListe");
+                if (nomEquipement===""){
+                    message.textContent = "veuillez saisir le nom d'un équipement.";
+                    message.style.color = "red";
+                } else{
+                    let nouvelElement = document.createElement("li");
+                    nouvelElement.textContent = nomEquipement;
+                    document.getElementById("listeEquipements").appendChild(nouvelElement);
+                    message.textContent = "Equipement ajouté avec succès.";
+                    message.style.color = "green";
+                    champ.value = "";
+                }
+            }
+            function viderListe() {
+                document.getElementById("listeEquipements").innerHTML = "";
+                document.getElementById("messageListe").textContent = "La liste a été vidée.";
+                document.getElementById("messageListe").style.color = "#0b3d91";
+            }
+            function afficherImageProfil() {
+                let image = document.getElementById("imageDynamique");
+                image.src = "images/profil.jpg";
+                image.alt = "Image de profil";
+            }
+            function afficherImageReseau() {
+                let image = document.getElementById("imageDynamique");
+                image.src = "images/reseau.jpg";
+                image.alt = "Image représentant un réseau informatique";
+            }
+        </script>
+    </body>
+</html>
